@@ -1,5 +1,8 @@
 package GUI;
 
+import LOGIC.Controller;
+import LOGIC.Message;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -66,6 +69,18 @@ public class SignUp  extends JPanel{
                 String name=nameField.getText();
                 String pass= passwordField.getText();
 
+                Message message= new Message(name,pass);
+                if (Controller.getInstance().signUp(message)){
+                    JPanel  jPanel= new JPanel();
+                    JButton jButton= new JButton("Main page");
+                    jPanel.setBounds(0,0,700,700);
+                    jPanel.add(jButton);
+                    frame.setContentPane(jPanel);
+                    frame.update();
+                }else {
+                    JOptionPane.showMessageDialog(frame,"enter a valid username");
+
+                }
             }
         });
     }

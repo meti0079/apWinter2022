@@ -17,8 +17,16 @@ public class Controller {
     }
 
     public boolean signUp(Message message){
-
-
+        String name=message.getName();
+        String pass=message.getPass();
+        SignUp signUp= new SignUp();
+        signUp.checkName(name);
+        if (signUp.isValidName){
+            User user= new User(name, pass);
+            new SaveUser().saveAUser(user);
+            return true;
+        }
+        return false;
     }
 
 
