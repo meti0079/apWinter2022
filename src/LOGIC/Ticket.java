@@ -11,8 +11,10 @@ public class Ticket {
     int id;
     Place place;
 
-    public Ticket(){
+
+    public Ticket( ){
         price=100;
+
         id=new Random().nextInt();
         place=Place.A;
     }

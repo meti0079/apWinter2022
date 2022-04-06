@@ -9,6 +9,7 @@ public class MainFrame extends JFrame {
         this.add(signUp);
         initial();
         update();
+        System.out.println("salalalalalla");;
     }
     private void initial() {
         this.setSize(new Dimension(700, 800));

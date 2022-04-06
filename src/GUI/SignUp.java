@@ -22,7 +22,6 @@ public class SignUp  extends JPanel{
         initComp();
         aligncomp();
         setListener();
-
     }
     private void init(){
         setSize(700, 700);
@@ -68,7 +67,6 @@ public class SignUp  extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 String name=nameField.getText();
                 String pass= passwordField.getText();
-
                 Message message= new Message(name,pass);
                 if (Controller.getInstance().signUp(message)){
                     JPanel  jPanel= new JPanel();

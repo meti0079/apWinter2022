@@ -14,7 +14,6 @@ public class SignUp {
         }else{
             isValidName=true;
         }
-
     }
 
 }

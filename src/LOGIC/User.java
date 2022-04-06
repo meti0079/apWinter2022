@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class User {
 
-    String name;
+   public String name;
     String pass;
     ArrayList<Ticket>tickets ;
     public  User(String name, String pass){
