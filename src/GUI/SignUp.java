@@ -1,6 +1,7 @@
 package GUI;
 
 import LOGIC.Controller;
+import LOGIC.IController;
 import LOGIC.Message;
 
 import javax.swing.*;
@@ -16,8 +17,12 @@ public class SignUp  extends JPanel{
     JLabel passLable;
 
     MainFrame frame;
-    public SignUp(MainFrame frame){
+
+    private final IController controller;
+
+    public SignUp(IController controller, MainFrame frame){
         this.frame=frame;
+        this.controller = controller;
         init();
         initComp();
         aligncomp();
@@ -68,7 +73,7 @@ public class SignUp  extends JPanel{
                 String name=nameField.getText();
                 String pass= passwordField.getText();
                 Message message= new Message(name,pass);
-                if (Controller.getInstance().signUp(message)){
+                if (controller.signUp(message)){
                     JPanel  jPanel= new JPanel();
                     JButton jButton= new JButton("Main page");
                     jPanel.setBounds(0,0,700,700);

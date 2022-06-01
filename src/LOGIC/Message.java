@@ -3,6 +3,7 @@ package LOGIC;
 public class Message {
     String name;
     String pass;
+    
     public  Message(String name , String pass){
         this.name=name;
         this.pass=pass;

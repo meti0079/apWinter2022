@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class User {
 
-   public String name;
+    public String name;
     String pass;
-    ArrayList<Ticket>tickets ;
-    public  User(String name, String pass){
+    ArrayList<Ticket>tickets;
+    
+    public User(String name, String pass){
         this.name=name;
         this.pass=pass;
         tickets=new ArrayList<>();
@@ -15,7 +16,4 @@ public class User {
             tickets.add(new Ticket());
         }
     }
-
-
-
 }

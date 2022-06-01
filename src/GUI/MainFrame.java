@@ -1,11 +1,14 @@
 package GUI;
 
+import LOGIC.Controller;
+import LOGIC.IController;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
-    public MainFrame() {
-        SignUp signUp= new SignUp(this);
+    public MainFrame(IController controller) {
+        SignUp signUp= new SignUp(controller, this);
         this.add(signUp);
         initial();
         update();
