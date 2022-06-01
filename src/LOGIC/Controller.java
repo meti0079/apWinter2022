@@ -1,35 +1,35 @@
 package LOGIC;
 
-public class Controller {
+import util.log.LogType;
+import util.log.MasterLogger;
 
-    public static Controller controller;
+public class Controller implements IController {
 
+//    public static Controller controller;
 
-    private Controller(){
+    public Controller(){
 
     }
 
-    public static Controller getInstance(){
-        if (controller==null){
-            controller=new Controller();
-        }
-        return controller;
-    }
+//    public static Controller getInstance(){
+//        if (controller==null){
+//            controller=new Controller();
+//        }
+//        return controller;
+//    }
 
-    public boolean signUp(Message message){
+    public boolean signUp(Message message) {
         String name=message.getName();
         String pass=message.getPass();
         SignUp signUp= new SignUp();
-        signUp.checkName(name);
-        if (signUp.isValidName){
+        
+        if (signUp.checkName(name)){
             User user= new User(name, pass);
-            new SaveUser().saveAUser(user);
+            new SaveUser().saveUser(user);
+
             return true;
         }
+
         return false;
     }
-
-
-
-
 }

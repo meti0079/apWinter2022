@@ -18,6 +18,4 @@ public class Ticket {
         id=new Random().nextInt();
         place=Place.A;
     }
-
-
 }
